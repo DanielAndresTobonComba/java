@@ -21,7 +21,7 @@ public class Main {
 
         int intentos = 0;
 
-        String palabra = lstNombres[numeroRandom];
+        String palabra = lstNombres[numeroRandom].toLowerCase();
 
         int desicion = JOptionPane.showConfirmDialog(null, "¿Deseas jugar?", "Juego del Ahorcado", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 
@@ -38,22 +38,25 @@ public class Main {
 
             System.out.println("\nJUEGO DEL AHORACADO");
 
+
+            int longitud = palabra.length();
+                
+            int veces = 0;
+
+            while (veces < longitud) {
+
+                vacio.add("_ "); 
+
+                veces ++;
+            }
+
             do {
 
+                
 
 
                 System.out.println("\nLa palabra tiene: " + palabra.length() + " caracteres.\n");
 
-                int longitud = palabra.length();
-                
-                int veces = 0;
-
-                while (veces <= longitud) {
-
-                    vacio.add("_ "); 
-
-                    veces ++;
-                }
 
                 System.out.println(vacio + "\n"); 
 
@@ -61,19 +64,34 @@ public class Main {
                 System.out.println("Intento numero: " + intentos + 1);
 
                 System.out.println("Ingresa una letra:");
-                String letra = sc1.nextLine();
+                String letra = sc1.nextLine().toLowerCase();
 
                 for(String item : lstLetras){
-                    if (item == letra){
+                    if (item.toLowerCase() == letra){
                         System.out.println("La letra ya fue ingresada");
                         break;
                     } continue;
                     
                 }
-
+                
+                
                 if (palabra.contains(letra)) {
                     System.out.println("\nLetra correcta");
 
+                    
+    
+                    System.out.println("\nTodas las ocurrencias...");
+                    for (int i = -1; (i = palabra.indexOf(letra, i + 1)) != -1; i++) {
+                        System.out.println("Posición: " + i);
+
+                        vacio.set(i,letra);
+
+                    } 
+
+                    
+
+                        
+                
                     
                     
                 } else {
