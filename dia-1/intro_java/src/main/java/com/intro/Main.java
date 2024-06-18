@@ -210,8 +210,8 @@ public class Main {
 
                 // Subcadenas 
                 String str = "El lenguaje de java";
-                Strict subStr = str.substring(12); // desde la pos 12
-                Strict subStr1 = str.substring(3,12); // desde la 3 a la 12
+                String subStr = str.substring(12); // desde la pos 12
+                String subStr1 = str.substring(3,12); // desde la 3 a la 12
 
                 // Conversion implicita 
                 int numeroEntero = 10;
@@ -230,8 +230,6 @@ public class Main {
                 /*Arreglos*/
                 // Los arreglos empiezan en 0 y la ultima posicion es -1
 
-                tipo_dato nombre_array [];
-                nombre_array = new tipo_dato[10];
 
                 int [] numero = {1,2,3,4,5};
                 String[] nombres = new String[3];
