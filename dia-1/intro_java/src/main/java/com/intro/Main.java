@@ -190,6 +190,7 @@ public class Main {
 
                 // Metodos de java 
 
+                /* 
                 // lenght : Longitud de una cadena
                 String s = "abc";
                 System.out.println(s.length()); 
@@ -226,7 +227,7 @@ public class Main {
                 inmutableStr = inmutableStr.concat(", mundo!");
                 System.out.println(inmutableStr); // Salida: Hola
 
-
+                */
                 /*Arreglos*/
                 // Los arreglos empiezan en 0 y la ultima posicion es -1
 
@@ -236,6 +237,9 @@ public class Main {
 
                 int LongitudNumeros = numero.length;
                 int LongitudNombres = nombres.length;
+
+                System.out.println(LongitudNumeros);
+                System.out.println(LongitudNombres);
 
 
 
