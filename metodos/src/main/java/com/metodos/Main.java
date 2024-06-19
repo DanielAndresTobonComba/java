@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Main metodo = new Main();
 
-        /* Ejercicio 1 Suma de dos numero */
+        /* Ejercicio 1 Suma de dos numero  */
        
 
         double num1 = 0.0;
@@ -50,7 +50,9 @@ public class Main {
             System.out.println("Ingrese un numero entero.");
         }
            
-        
+       
+
+        /*Ejercicio 2 */
 
         
     }
