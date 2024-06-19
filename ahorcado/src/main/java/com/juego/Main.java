@@ -36,7 +36,7 @@ public class Main {
         if (desicion == JOptionPane.YES_OPTION) {
             Scanner sc1 = new Scanner(System.in);
 
-            System.out.println("\nJUEGO DEL AHORACADO");
+            System.out.println("\nJUEGO DEL AHORCADO");
 
 
             int longitud = palabra.length();
