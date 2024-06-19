@@ -10,8 +10,8 @@ import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
 
-        // Declaracion de arreglos 
-        String[] lstNombres = {"Negro", "Prieto", "Manzana", "Persona", "David", "Universo", "Presona", "Animal", "Pescador", "Programado"};
+        // Declaracion de arreglos
+        String[] lstNombres = {"Negro", "Prieto", "Manzana", "Persona", "David", "Universo", "Persona", "Animal", "Pescador", "Programado"};
 
         ArrayList<String> lstLetras = new ArrayList<>();
         ArrayList<String> vacio = new ArrayList<>();
@@ -24,6 +24,8 @@ public class Main {
         String palabra = lstNombres[numeroRandom].toLowerCase();
 
         int desicion = JOptionPane.showConfirmDialog(null, "¿Deseas jugar?", "Juego del Ahorcado", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+        String verificarPalabra = "";
 
         // Impresion de datos
         System.out.println("Número aleatorio: " + numeroRandom);
@@ -52,7 +54,7 @@ public class Main {
 
             do {
 
-                
+                String letra = "";
 
 
                 System.out.println("\nLa palabra tiene: " + palabra.length() + " caracteres.\n");
@@ -60,42 +62,65 @@ public class Main {
 
                 System.out.println(vacio + "\n"); 
 
+                do { 
 
-                System.out.println("Intento numero: " + intentos + 1);
+                    System.out.println("\nIntento numero: " + (intentos + 1));
 
-                System.out.println("Ingresa una letra:");
-                String letra = sc1.nextLine().toLowerCase();
+                    System.out.println("Ingresa una letra:");
+                    letra = sc1.nextLine().toLowerCase();
 
+                } while (letra.length() != 1 || letra.trim() == "" || !Character.isLetter(letra.charAt(0)));
+
+                
                 for(String item : lstLetras){
                     if (item.toLowerCase() == letra){
                         System.out.println("La letra ya fue ingresada");
                         break;
-                    } continue;
+                    }
                     
                 }
                 
                 
                 if (palabra.contains(letra)) {
                     System.out.println("\nLetra correcta");
-
+                    verificarPalabra = "";
                     
     
-                    System.out.println("\nTodas las ocurrencias...");
+                    // System.out.println("\nTodas las ocurrencias...");
+
                     for (int i = -1; (i = palabra.indexOf(letra, i + 1)) != -1; i++) {
-                        System.out.println("Posición: " + i);
+                        // System.out.println("Posición: " + i);
 
                         vacio.set(i,letra);
 
-                    } 
+                    }
 
-                    
 
+
+                    for( String item : vacio){
                         
+                        verificarPalabra += item.trim();
+                        
+                    }
+
+                    if (verificarPalabra.equals(palabra) ){
+                        System.out.println("Felicidades has adivinado la palabra. " + palabra);
+                        break;
+                    }
+                    
+
+                    System.out.println(verificarPalabra);  
+                    System.out.println(palabra);                  
+                    
+                    
+                    
+                } 
                 
-                    
-                    
-                } else {
+                else {
                     System.out.println("La letra no está en la palabra.");
+
+                    
+
                     intentos++ ;
                     lstLetras.add(letra);
                     
@@ -104,17 +129,21 @@ public class Main {
                
             } while (intentos < 3);
 
+            if(intentos >= 3){
+                System.out.println("Has superado el numero de intentos");
+            }
+
             System.out.println("Has terminado el juego.");
             sc1.close(); // Cerramos el Scanner al final del uso
         } else {
             System.out.println("Adiós");
         }
 
-        /* 
+        /*
         String [] lstNombres = {"Negro" , "Prieto" , "Manzana" , "Persona" ,"David" , "Universo" , "Presona" , "Animal" , "Pescador" , "Programado"};
 
         int numeroRandom = (int) (Math.random() * 10) + 1;
-        String palabra = lstNombres[numeroRandom]; 
+        String palabra = lstNombres[numeroRandom];
 
         System.out.println(numeroRandom);
         System.out.println(palabra);
