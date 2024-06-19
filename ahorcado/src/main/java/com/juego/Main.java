@@ -69,7 +69,10 @@ public class Main {
                     System.out.println("Ingresa una letra:");
                     letra = sc1.nextLine().toLowerCase();
 
-                } while (letra.length() != 1 || letra.trim() == "" || !Character.isLetter(letra.charAt(0)));
+                } while (letra.length() != 1 || letra.trim() == "" ||
+                 !Character.isLetter(letra.charAt(0)) 
+                 // !letra.matches("[a-z]") otra forma de verificar si es una letra del abecedario 
+                );
 
                 
                 for(String item : lstLetras){
@@ -80,7 +83,7 @@ public class Main {
                     
                 }
                 
-                
+                // Saber si una letra esta en una palabra
                 if (palabra.contains(letra)) {
                     System.out.println("\nLetra correcta");
                     verificarPalabra = "";
@@ -88,6 +91,8 @@ public class Main {
     
                     // System.out.println("\nTodas las ocurrencias...");
 
+
+                    // For inportante
                     for (int i = -1; (i = palabra.indexOf(letra, i + 1)) != -1; i++) {
                         // System.out.println("Posición: " + i);
 
@@ -103,8 +108,9 @@ public class Main {
                         
                     }
 
+                    // Saber si una cadena es igual a otra
                     if (verificarPalabra.equals(palabra) ){
-                        System.out.println("Felicidades has adivinado la palabra. " + palabra);
+                        System.out.println("\nFelicidades has adivinado la palabra. " + palabra);
                         break;
                     }
                     
@@ -117,12 +123,21 @@ public class Main {
                 } 
                 
                 else {
+
+                    String verificarLetras = "";
+
                     System.out.println("La letra no está en la palabra.");
 
-                    
+                    for (String item : lstLetras){
+                        verificarLetras += item;
+                    }
 
-                    intentos++ ;
-                    lstLetras.add(letra);
+                    if(!verificarLetras.contains(letra)){
+                        lstLetras.add(letra);
+                        intentos++;
+                    }
+                    
+                    
                     
                 }
 
