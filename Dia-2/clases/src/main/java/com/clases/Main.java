@@ -41,14 +41,14 @@ public class Main {
         
         
 
-       /*  Main principal = new Main();
+        Main principal = new Main();
 
-        System.out.println(principal.suma(4,7)); */
+        System.out.println(principal.suma(4,7)); 
 
 
         // Creacion de el objeto mi estudiante
 
-        /* 
+        
         Estudiante myStudent = new Estudiante(null,null,0);
 
         myStudent.setNombre("Juanito");
@@ -57,7 +57,7 @@ public class Main {
 
         // Obtengo el nonbre de la clase estudiante
         System.out.println(myStudent.getNombre());
-        */
+        
 
 
         
@@ -68,9 +68,9 @@ public class Main {
 
     }
 
-    /* 
+    
     public int suma (int a , int b){
         return a+b;
     }
-    */
+    
 }

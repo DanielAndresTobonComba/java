@@ -10,10 +10,13 @@ import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
 
+        //Main metodos = new Main();
+
         // Declaracion de arreglos
         String[] lstNombres = {"Negro", "Prieto", "Manzana", "Persona", "David", "Universo", "Persona", "Animal", "Pescador", "Programado"};
 
         ArrayList<String> lstLetras = new ArrayList<>();
+
         ArrayList<String> vacio = new ArrayList<>();
 
         // Declaracion de variables
@@ -28,8 +31,8 @@ public class Main {
         String verificarPalabra = "";
 
         // Impresion de datos
-        System.out.println("Número aleatorio: " + numeroRandom);
-        System.out.println("Palabra seleccionada: " + palabra);
+        // System.out.println("Número aleatorio: " + numeroRandom);
+        // System.out.println("Palabra seleccionada: " + palabra);
 
        
 
@@ -64,10 +67,16 @@ public class Main {
 
                 do { 
 
-                    System.out.println("\nIntento numero: " + (intentos + 1));
+                    System.out.println("\nIntento: " + (intentos + 1));
 
                     System.out.println("Ingresa una letra:");
                     letra = sc1.nextLine().toLowerCase();
+
+                    if(letra.length() != 1 || letra.trim() == "" ||
+                    !Character.isLetter(letra.charAt(0))){
+                        System.out.println("\nDato invalido selecciona otro");
+                    }
+
 
                 } while (letra.length() != 1 || letra.trim() == "" ||
                  !Character.isLetter(letra.charAt(0)) 
@@ -110,13 +119,14 @@ public class Main {
 
                     // Saber si una cadena es igual a otra
                     if (verificarPalabra.equals(palabra) ){
-                        System.out.println("\nFelicidades has adivinado la palabra. " + palabra);
+                        System.out.println("\n***************************************************");
+                        System.out.println("Felicidades has adivinado la palabra: " + palabra.toUpperCase().charAt(0) + palabra.substring(1, palabra.length()).toLowerCase());
                         break;
                     }
                     
 
-                    System.out.println(verificarPalabra);  
-                    System.out.println(palabra);                  
+                    // System.out.println(verificarPalabra);  
+                    // System.out.println(palabra);                  
                     
                     
                     
@@ -126,7 +136,7 @@ public class Main {
 
                     String verificarLetras = "";
 
-                    System.out.println("La letra no está en la palabra.");
+                    System.out.println("\nLa letra no está en la palabra.");
 
                     for (String item : lstLetras){
                         verificarLetras += item;
@@ -146,9 +156,11 @@ public class Main {
 
             if(intentos >= 3){
                 System.out.println("Has superado el numero de intentos");
+                System.out.println("La palabra era: " + palabra);
             }
 
             System.out.println("Has terminado el juego.");
+            
             sc1.close(); // Cerramos el Scanner al final del uso
         } else {
             System.out.println("Adiós");
@@ -204,7 +216,7 @@ public class Main {
             
          }
             
-        
+    
     }
 
 
