@@ -20,19 +20,7 @@ public class Main {
     
     
 
-        // PROGRAMACION ORIENTADA A OBJETOS 
-
-        // Clases: Plantilla generica 
-        // Objeto: Individuo o cosa que salio de la clase / platilla
-        // Atributo: Caracteristicas 
-        // Metodos: Funciones , cambia el estado del objeto 
-
-
-         
-         Clase: Animal 
-         Objetos: Leon , Gato
-         Atributos: 9años , 4años 
-         Metodos: Dezplazarse , comer 
+        
         */
 
         
