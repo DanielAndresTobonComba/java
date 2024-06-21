@@ -45,6 +45,8 @@ public class Main {
 
         // Obtengo el nonbre de la clase estudiante
         System.out.println(myStudent.getNombre());
+        System.out.println(myStudent.getApellido());
+        System.out.println(myStudent.getEdad());
         
 
 
