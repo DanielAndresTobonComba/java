@@ -1,0 +1,19 @@
+PERSISTENCIA DE DATOS
+
+JERARQUIA DE DATOS 
+
+
+TIPOS DE ARCHIVOS
+
+Estandar: contener diversos tipos de datos , documentos img audio etc.
+
+Carpeta / directorio: Organiza de forma jerarquica
+
+Especiales: Controlar distintos perifericos conectados a la computadora 
+
+
+RUTAS 
+
+Absoluta: Estamos usando una dirrecion donde se referencia un directorio.
+
+Relativa: Hcemos referencia a un punto de montaje del sistema operativo // Recomendado.
